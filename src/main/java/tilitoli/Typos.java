@@ -1,6 +1,6 @@
 package tilitoli;
 
-public class Typos {
+public class Typos extends Frame {
     public void welcomeMessage(){
         System.out.println("     ___________________");
         System.out.println("    / Hey, im Tomisan   \\");

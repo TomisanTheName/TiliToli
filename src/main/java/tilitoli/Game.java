@@ -6,7 +6,7 @@ public class Game extends Engine {
     public static void main(String[] args) {
         Engine game = new Engine();
 
-        String[][] randomField = {{"4", "2", "7"},{" ", "1", "3"},{"5", "8", "6"}};
+        String[][] randomField = game.randomizeField();
         game.setGameField(randomField);
         game.welcomeMessage();
         game.instructionMessage();

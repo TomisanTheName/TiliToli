@@ -1,6 +1,7 @@
 package tilitoli;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
@@ -38,6 +39,29 @@ public class Engine extends Typos {
         }
 
         return result;
+    }
+
+    public String[][] randomizeField() {
+        String[][] resultField = {{"0","0","0"},{"0","0","0"},{"0", "0", " "}};
+        List<Integer> numbersToFillFieldWith = new ArrayList<Integer>();
+        for (int i = 1; i < 9; i++) {
+            numbersToFillFieldWith.add(i);
+        }
+        Collections.shuffle(numbersToFillFieldWith);
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (!numbersToFillFieldWith.isEmpty()){
+                    String tmp = numbersToFillFieldWith.get(0).toString();
+                    numbersToFillFieldWith.remove(0);
+
+                    resultField[i][j] = tmp;
+                } else {
+                    resultField[i][j] = " ";
+                }
+            }
+        }
+        return resultField;
     }
 
     public boolean winningConditionIsTrue(String[][] field) {
